@@ -1,3 +1,31 @@
 *{
   margin: 0;
 }
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-blend-mode: multiply;
+  background-color: #bdbdbd;
+  background-size: cover;
+  background-position: center center;
+}
+
+.time {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; 
+  margin-top: 30px;
+}
+
+.greet {
+  font-size: 30px;
+  text-align: center;
+}
