@@ -1,8 +1,10 @@
 import './App.css';
 import { useContext } from 'react';
-import { RiExchangeLine } from 'react-icons/ri';
 import DataContext from './components/contexts/DataContext';
 import Time from './components/Time';
+import BackgroundCredit from './components/BackgroundCredit';
+import TodoContainer from './components/TodoContainer';
+import QuickLinksContainer from './components/QuickLinksContainer';
 
 function App() {
   const data = useContext(DataContext);
@@ -15,9 +17,10 @@ function App() {
       }}
     >
       <Time />
-      <RiExchangeLine size={24} onClick={data.changeBg} style={{ zIndex: 99 }} />
+      <TodoContainer />
+      <QuickLinksContainer />
+      <BackgroundCredit />
     </div>
-
   );
 }
 

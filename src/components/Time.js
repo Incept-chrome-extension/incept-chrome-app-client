@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 import { format } from '../utils/TimeUtil';
 
 function Time() {
@@ -22,7 +23,10 @@ function Time() {
 
   return (
     <div style={{ color: 'white' }} className="time">
-      {`${hours}:${minutes}`}
+      <div className="time__time">
+        <AiOutlineClockCircle size={30} className="time_clock_icon" />
+        {`${hours}:${minutes}`}
+      </div>
       <div className="greet">
         Good Morning
       </div>
