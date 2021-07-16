@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import DataProvider from './components/contexts/DataProvider';
+import UserDataProvider from './components/contexts/UserDataProvider';
 
 ReactDOM.render(
-  <DataProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </DataProvider>,
+  <UserDataProvider>
+    <DataProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </DataProvider>
+  </UserDataProvider>,
   document.getElementById('root'),
 );
 

@@ -1,4 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createApi } from 'unsplash-js';
@@ -22,6 +22,8 @@ class DataProvider extends Component {
     super(props);
     this.state = {
       backgroundImageUrl: localStorage.getItem('backgroundImageUrl'),
+      backgroundImageAuthor: localStorage.getItem('backgroundImageAuthor'),
+      unsplashUrl: localStorage.getItem('unsplashUrl'),
       day: localStorage.getItem('todayDayNumber'),
     };
   }
@@ -52,21 +54,30 @@ class DataProvider extends Component {
       })
 
       .then(async (res) => {
+        const name = res.response[0].user.name;
         const d = new Date();
-        this.setState({
+        await this.setState({
           backgroundImageUrl: res.response[0].urls.full,
+          backgroundImageAuthor: name,
+          unsplashUrl: `https://unsplash.com/photos/${res.response[0].id}`,
           day: d.getDay(),
         });
 
+        localStorage.setItem('backgroundImageAuthor', name);
         localStorage.setItem('backgroundImageUrl', res.response[0].urls.full);
+        localStorage.setItem('unsplashUrl', (`https://unsplash.com/photos/${res.response[0].id}`));
         localStorage.setItem('todayDayNumber', d.getDay());
       });
   }
 
   render() {
-    const { backgroundImageUrl, day } = this.state;
+    const {
+      backgroundImageUrl, backgroundImageAuthor, unsplashUrl, day,
+    } = this.state;
     const contextValue = {
       backgroundImageUrl,
+      unsplashUrl,
+      backgroundImageAuthor,
       day,
       changeBg: () => this.changeBg(),
     };
