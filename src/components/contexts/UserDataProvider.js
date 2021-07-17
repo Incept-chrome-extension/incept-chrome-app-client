@@ -46,15 +46,23 @@ class UserDataProvider extends Component {
     localStorage.setItem('userTodos', str)
   };
 
-  addQuickLinks(name, quickLink){
+  setTodo(newTodos){
+    this.setState({
+      userTodos: newTodos
+    })
+    console.log(this.state.userTodos)
+  }
+
+  addQuickLink(title, link, icon){
     const newKey = uniqid();
     const obj = {
-      title: name,
-      link: quickLink,
+      title: title,
+      link: link,
       key: newKey,
+      favicon: icon
     }
     this.setState(prev =>( {
-      userTodos: [...prev.quickLinks, obj]
+      quickLinks: [...prev.quickLinks, obj]
     }))
     let str = JSON.stringify(this.state.quickLinks);
     if(str.length<=2){
@@ -71,7 +79,10 @@ class UserDataProvider extends Component {
     const contextValue = {
       userTodos: this.state.userTodos,
       addTodo: (newTodo)=>this.addTodo(newTodo),
-      deleteTodo: ()=>this.deleteTodo()
+      deleteTodo: ()=>this.deleteTodo(),
+      setTodo: (newTodo)=>this.setTodo(newTodo),
+      userQuickLinks: this.state.quickLinks,
+      addQuickLink : (title,link,icon) => this.addQuickLink(title,link,icon)
     };
 
     return (
