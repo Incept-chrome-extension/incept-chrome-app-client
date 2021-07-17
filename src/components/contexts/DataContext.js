@@ -3,7 +3,7 @@ import React from 'react';
 const DataContext = React.createContext({
   backgroundImageUrl: '',
   backgroundImageAuthor: '',
-  unsplashLink: '',
+  unsplashUrl: '',
   day: '',
   changeBg: () => {},
 });

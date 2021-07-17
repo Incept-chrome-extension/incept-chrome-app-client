@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useContext, useState } from 'react';
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
+import Toast from '../configurations/ToastConfig';
 import UserDataContext from './contexts/UserDataContext';
 import TodoList from './TodoList';
 
@@ -26,9 +27,14 @@ function TodoContainer() {
 
   const submitTodo = (e) => {
     e.preventDefault();
-    userData.addTodo(input);
-    setInput('');
-    e.target.reset();
+    if (input != null && /\S/.test(input)) {
+      userData.addTodo(input);
+      setInput('');
+      e.target.reset();
+      Toast.showSuccessNotification('Todo Added');
+    } else {
+      Toast.showErrorNotification('Todo Cannot be Empty');
+    }
   };
 
   return (

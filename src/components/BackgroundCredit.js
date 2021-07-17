@@ -10,7 +10,9 @@ function BackgroundCredit() {
       <p>
         {`© ${data.backgroundImageAuthor}`}
       </p>
-      <RiUnsplashFill className="bg__credit__icon" />
+      <a href={data.unsplashUrl} style={{ textDecoration: 'none', color: 'whitesmoke' }}>
+        <RiUnsplashFill title="Unsplas link" className="bg__credit__icon" onClick={() => console.log(data.unsplashLink)} />
+      </a>
       <RiExchangeLine title="Change Background" className="bg__credit__icon" onClick={data.changeBg} />
     </div>
   );

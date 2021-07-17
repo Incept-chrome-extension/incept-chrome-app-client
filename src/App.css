@@ -57,6 +57,14 @@
 
 .bg__credit__icon{
   padding: 2px;
+  font-size: 18px;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+.bg__credit__icon:hover{
+  font-size: 20px;
+  padding: 0 5px;
+  transition-duration: 300ms;
 }
 
 .todoList__expanded {
@@ -137,12 +145,13 @@
   visibility: hidden;
 }
 
-.todo>p{
-  padding: 5px 18px;
-  border-radius: 20px;
-}
 .todo_item{
   cursor: pointer;
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
 }
 .todo_item:hover{
   background: rgba(255,255,255,0.1);
@@ -154,13 +163,13 @@
   width: 350px;
   position: fixed;
   left: 0;
-  transform: translateX(-270px);
+  transform: translateX(-275px);
   transition-duration: 300ms;
 }
 .quicklinks__expanded{
   display: flex;
   color: whitesmoke;
-  width: 200px;
+  width: 300px;
   position: fixed;
   left: 0;
   transition-duration: 300ms;
@@ -192,4 +201,57 @@
 }
 .label_icon{
   display: flex;
+}
+
+.linkSubmit{
+  background-color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  border: none;
+  width: 80%;
+  color: rgb(83, 83, 83);
+  font-size: 16px;
+  border-bottom: 1px solid  lightgrey;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 30px;
+  transition-duration: 300ms;
+}
+.linkSubmit:hover{
+  background-color: rgba(255,255,255,1);
+}
+.quicklinks{
+  padding-top: 10px;
+}
+.quicklink_item{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+.quicklink_favicon{
+  height: 18px;
+}
+.link{
+  text-align: left;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.quicklink_item:hover{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+}
+
+.quicklink_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition-duration: 1s;
 }

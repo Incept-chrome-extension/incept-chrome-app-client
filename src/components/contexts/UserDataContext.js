@@ -3,11 +3,10 @@ import React from 'react';
 const UserDataContext = React.createContext({
   userTodos: [],
   addTodo: () => {},
-  deleteTodo: () => {},
-  updateTodo: () => {},
+  setTodo: () => {},
   userQuickLinks: [],
-  addQuickLinks: () => {},
-  deleteQuickLinks: () => {},
+  addQuickLink: () => {},
+  setQuickLink: () => {},
 });
 
 export default UserDataContext;
