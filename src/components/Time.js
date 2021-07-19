@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClockCircle } from 'react-icons/ai';
+import { HiDotsHorizontal } from 'react-icons/hi';
 import { format } from '../utils/TimeUtil';
+import Greet from './Greet';
 
 function Time() {
   const [hours, setHours] = useState();
@@ -24,11 +26,14 @@ function Time() {
   return (
     <div style={{ color: 'white' }} className="time">
       <div className="time__time">
-        <AiOutlineClockCircle size={30} className="time_clock_icon" />
-        {`${hours}:${minutes}`}
+        <AiOutlineClockCircle size={30} className="time_icon" />
+        <div className="time__text">
+          {`${hours}:${minutes}`}
+        </div>
+        <HiDotsHorizontal size={30} className="time_icon" />
       </div>
       <div className="greet">
-        Good Morning
+        <Greet hours={hours} />
       </div>
     </div>
   );

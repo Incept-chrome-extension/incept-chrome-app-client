@@ -25,12 +25,9 @@ function TodoList() {
         data.userTodos.splice(index, 1);
       }
     });
-
-    console.log(data);
     data.setTodo(data.userTodos);
   };
 
-  console.log(data);
   return (
     <div className="todo">
       {Array.isArray(data.userTodos) && data.userTodos.map((todo, index) => (
