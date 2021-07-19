@@ -21,10 +21,6 @@ class UserDataProvider extends Component {
     };
   }
 
-  componentDidMount(){
-    console.log(localStorage.getItem("userTodos"));
-  }
-
   addTodo(todo){
     const newKey = uniqid();
     const obj ={
@@ -50,11 +46,16 @@ class UserDataProvider extends Component {
     this.setState({
       userTodos: newTodos
     })
-    console.log(this.state.userTodos)
+    localStorage.setItem('userTodos', JSON.stringify(this.state.userTodos))
   }
 
   addQuickLink(title, link, icon){
     const newKey = uniqid();
+    const prefix = 'http://';
+    if (link.substr(0, prefix.length) !== prefix)
+    {
+        link = prefix + link;
+    }
     const obj = {
       title: title,
       link: link,

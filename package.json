@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "./script/build.sh",
     "eslint": "eslint .",
     "eslint:fix": "eslint --fix --max-warnings=0 .",
     "test": "react-scripts test",

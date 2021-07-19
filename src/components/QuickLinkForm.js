@@ -22,7 +22,6 @@ function QuickLinkForm() {
       }
       const icon = `https://icons.duckduckgo.com/ip2/${host}.ico`;
       data.addQuickLink(name, link, icon);
-      console.log(data.userQuickLinks);
     }
   };
 

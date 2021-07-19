@@ -1,5 +1,5 @@
 /* eslint-disable  class-methods-use-this */
-import { toast } from 'react-toastify';
+import { toast, Flip } from 'react-toastify';
 
 export default class ToastService {
   constructor() {
@@ -12,6 +12,7 @@ export default class ToastService {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 1000,
       hideProgressBar: true,
+      transition: Flip,
     });
   }
 
@@ -21,6 +22,7 @@ export default class ToastService {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 1000,
       hideProgressBar: true,
+      transition: Flip,
     });
   }
 }

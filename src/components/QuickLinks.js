@@ -7,7 +7,7 @@ function QuickLinks() {
   return (
     <div className="quicklinks">
       {Array.isArray(data.userQuickLinks) && data.userQuickLinks.map((link) => (
-        <a href={link.link} style={{ textDecoration: 'none', color: 'whitesmoke' }}>
+        <a rel="external" href={link.link} style={{ textDecoration: 'none', color: 'whitesmoke' }}>
           <div className="quicklink_item">
             <img src={link.favicon} alt="favicon" className="quicklink_favicon" />
             <p className="link">
