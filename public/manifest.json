@@ -20,6 +20,5 @@
   "chrome_url_overrides": {
     "newtab": "dashboard.html"
   },
-
-  "permissions": ["geolocation", "storage", "activeTab", "scripting"]
+  "permissions": [ "tabs","geolocation", "storage", "activeTab", "scripting", "tabs"]
 }

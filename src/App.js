@@ -5,6 +5,8 @@ import Time from './components/Time';
 import BackgroundCredit from './components/BackgroundCredit';
 import TodoContainer from './components/TodoContainer';
 import QuickLinksContainer from './components/QuickLinksContainer';
+import Weather from './components/Weather';
+import Quote from './components/Quote';
 
 function App() {
   const data = useContext(DataContext);
@@ -20,6 +22,8 @@ function App() {
       <TodoContainer />
       <QuickLinksContainer />
       <BackgroundCredit />
+      <Weather />
+      <Quote />
     </div>
   );
 }

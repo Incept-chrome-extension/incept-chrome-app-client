@@ -43,8 +43,8 @@ function TodoContainer() {
         {
           collapsed ? (
             <div className="label_icon" onClick={toggleCollapsed}>
-              <p>Todos</p>
               <AiOutlineDoubleLeft size={22} />
+              <p className="collapsed__tag">Todos</p>
             </div>
           ) : (
             <AiOutlineDoubleRight size={22} onClick={toggleCollapsed} />

@@ -51,10 +51,10 @@ class UserDataProvider extends Component {
 
   addQuickLink(title, link, icon){
     const newKey = uniqid();
-    const prefix = 'http://';
-    if (link.substr(0, prefix.length) !== prefix)
-    {
-        link = prefix + link;
+    const httpPrefix = 'http://';
+    const httpsPrefix = 'https://';
+    if((link.substr(0, httpsPrefix.length)!=httpsPrefix) && (link.substr(0, httpPrefix.length)!=httpPrefix)){
+      link = httpPrefix + link;
     }
     const obj = {
       title: title,
@@ -62,6 +62,7 @@ class UserDataProvider extends Component {
       key: newKey,
       favicon: icon
     }
+    console.log(obj)
     this.setState(prev =>( {
       quickLinks: [...prev.quickLinks, obj]
     }))
@@ -75,6 +76,12 @@ class UserDataProvider extends Component {
     }
     localStorage.setItem('quickLinks', str)
   }
+  setQuickLink(newLinks){
+    this.setState({
+      quickLinks: newLinks
+    })
+    localStorage.setItem('quickLinks', JSON.stringify(this.state.quickLinks))
+  }
 
   render() {
     const contextValue = {
@@ -83,7 +90,8 @@ class UserDataProvider extends Component {
       deleteTodo: ()=>this.deleteTodo(),
       setTodo: (newTodo)=>this.setTodo(newTodo),
       userQuickLinks: this.state.quickLinks,
-      addQuickLink : (title,link,icon) => this.addQuickLink(title,link,icon)
+      addQuickLink : (title,link,icon) => this.addQuickLink(title,link,icon),
+      setQuickLink: (newLinks) => this.setQuickLink(newLinks)
     };
 
     return (

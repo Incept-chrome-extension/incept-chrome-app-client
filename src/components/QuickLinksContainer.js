@@ -31,7 +31,7 @@ function QuickLinksContainer() {
         {
           collapsed ? (
             <div className="label_icon" onClick={toggleCollapsed}>
-              <p>Links</p>
+              <p className="collapsed__tag">Links</p>
               <AiOutlineDoubleRight size={22} />
             </div>
           ) : (

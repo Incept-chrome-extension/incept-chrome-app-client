@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 function Greet(props) {
   const [greet, setGreet] = useState('');
@@ -20,9 +20,5 @@ function Greet(props) {
     </div>
   );
 }
-
-Greet.propTypes = {
-  hours: PropTypes.node.isRequired,
-};
 
 export default Greet;
