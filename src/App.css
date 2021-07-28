@@ -42,7 +42,7 @@
 }
 
 .bg__credit{
-  width: 120px;
+  z-index: 99;
   bottom: 0;
   right: 0;
   position: fixed;
@@ -51,7 +51,7 @@
   color: whitesmoke;
 }
 .bg__credit>p{
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .bg__credit__icon{
@@ -68,7 +68,7 @@
 
 .todoList__expanded {
   box-sizing: border-box;
-  margin-top: 10px;
+  margin-top: 110px;
   border-radius: 10px 0 0 10px;
   border-color: whitesmoke;
   border-style: solid;
@@ -85,7 +85,7 @@
 }
 .todoList__collapsed {
   box-sizing: border-box;
-  margin-top: 10px;
+  margin-top: 110px;
   display: flex;
   color: whitesmoke;
   width: 350px;
@@ -97,7 +97,7 @@
   right: 0;
   height: 45px;
   overflow-x: hidden;
-  transform: translateX(270px);
+  transform: translateX(264px);
   transition-duration: 300ms;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(25px);
@@ -189,7 +189,7 @@
   border-width: 1px 1px 1px 0px;
   border-radius: 0 10px 10px 0;
   left: 0;
-  transform: translateX(-275px);
+  transform: translateX(-268px);
   transition-duration: 300ms;
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(25px);
@@ -210,11 +210,15 @@
   border-style: solid;
   border-width: 1px 1px 1px 0px;  
   left: 0;
+  max-height: 90vh;
   border-radius: 0 10px 10px 0;
   transition-duration: 300ms;
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(25px);
 
+}
+.quicklinks__expanded::-webkit-scrollbar{
+  width: 0;
 }
 .quicklinks__list {
   padding-top: 8px;
@@ -227,8 +231,8 @@
   flex-direction: column;
   padding-bottom: 20px;
   border-radius: 0px 0px 0px 5px;
-
 }
+
 .quicklinks__toggle{
   padding: 10px;
   height: 25px;
@@ -260,6 +264,8 @@
 }
 .quicklinks{
   padding-top: 10px;
+  overflow-y: scroll;
+
 }
 .quicklink_item{
   display: flex;
@@ -273,14 +279,14 @@
   border-radius: 15px;
 }
 .quicklink_favicon{
-  height: 18px;
+  height: 14px;
 }
 .link{
   text-align: left;
   cursor: pointer;
   padding: 5px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
 }
@@ -309,4 +315,99 @@
 }
 .delete_icon{
   display: none;
+}
+.collapsed__tag{
+  font-size: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.quicklink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.quicklink_icontitle{
+  display: flex;
+  background-color: tomato;
+  overflow: initial;
+}
+
+.weather {
+  position: fixed;
+  width: 120px;
+  padding: 10px;
+  text-align: right;
+  right: 0;
+  margin-top: 9px;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+  border-color: whitesmoke;
+  border-style: solid;
+  border-width: 1px 0px 1px 1px;  
+  box-sizing: border-box;
+  color: whitesmoke;
+  position: fixed;
+  right: 0;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(25px);
+}
+
+.quote__container {
+  position: fixed;
+  bottom: 10px;
+  color: whitesmoke;
+  width: 100%;
+  text-align: center;
+}
+.quote {
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.quicklinks::-webkit-scrollbar{
+  width: 0;
+}
+
+.quote__author {
+  text-align: right;
+  padding: 5px 0;
+  opacity: 0;
+  transition-duration: 500ms;
+  visibility: hidden;
+  font-size: 14px;
+}
+.quote:hover .quote__author{
+  opacity: 1;
+  visibility: visible;
+  transition-duration: 500ms;
+}
+.favicon__container{
+  background-color: white;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.form_links{
+  height: 95%;
+  overflow-y: scroll;
+}
+.form_links::-webkit-scrollbar{
+  width: 0;
+}
+.weather_temp{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather_icon{
+  padding-top: 2px;
 }

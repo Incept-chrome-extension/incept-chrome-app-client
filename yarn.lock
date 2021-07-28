@@ -7906,6 +7906,11 @@ open@^7.0.2:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
+openweather-apis@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/openweather-apis/-/openweather-apis-4.4.1.tgz#1f72c10a880287f38fbe3104be8e21dcf1c0b6c9"
+  integrity sha512-/t3IVSEwLFQN2xBdu4iAib9OifLzdAbea/OCokchZgvMOgwMEmr8g/pRz2HjuYQpHp6HWaiS2dMf5h48LJPGug==
+
 opn@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.5.0.tgz#fc7164fab56d235904c51c3b27da6758ca3b9bfc"

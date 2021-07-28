@@ -21,7 +21,9 @@
         "eol-last": ["error", "always"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/state-in-constructor": "off",
+        "react/no-array-index-key": "off",
         "react/react-in-jsx-scope": "off",
-        "no-irregular-whitespace": "error"
+        "no-irregular-whitespace": "error",
+        "import/prefer-default-export": "off"
     }
 }

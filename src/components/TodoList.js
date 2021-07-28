@@ -31,7 +31,7 @@ function TodoList() {
   return (
     <div className="todo">
       {Array.isArray(data.userTodos) && data.userTodos.map((todo, index) => (
-        <div className="todo_item" onClick={() => toggleDone(todo)}>
+        <div className="todo_item" onClick={() => toggleDone(todo)} key={index}>
           <div className="todo_title">
             {
                 todo.done ? (
