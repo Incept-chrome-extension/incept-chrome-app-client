@@ -22,7 +22,7 @@ function QuickLinksContainer() {
     <div className={quickLinks}>
       <div className="quicklinks__list">
         <p className="quicklinkshead">Links</p>
-        <div>
+        <div className="form_links">
           <QuickLinkForm />
           <QuickLinks />
         </div>

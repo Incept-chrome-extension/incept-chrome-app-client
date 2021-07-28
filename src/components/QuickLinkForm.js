@@ -1,6 +1,8 @@
 /* eslint-disable prefer-destructuring */
 import React, { useContext, useState } from 'react';
 import { IoIosArrowDropup } from 'react-icons/io';
+import Toast from '../configurations/ToastConfig';
+import { getFavicon } from '../utils/WebSiteFavicon';
 import UserDataContext from './contexts/UserDataContext';
 
 function QuickLinkForm() {
@@ -9,19 +11,17 @@ function QuickLinkForm() {
   const [link, setLink] = useState('');
   const data = useContext(UserDataContext);
 
-  const submitQuicklink = () => {
+  const submitQuicklink = (e) => {
     if (/\S/.test(name) && /\S/.test(link)) {
-      let host;
-      if (link.indexOf('http://') === 0 || link.indexOf('https://') === 0) {
-        const pathArray = link.split('/');
-        host = pathArray[2];
-      } else {
-        const pathArray = link.split('/');
-        host = pathArray[0];
-        setLink(`http://${link}`);
-      }
-      const icon = `https://icons.duckduckgo.com/ip2/${host}.ico`;
+      const icon = getFavicon(link);
       data.addQuickLink(name, link, icon);
+      e.target.reset();
+      setLink('');
+      setName('');
+      setShowForm(false);
+    } else {
+      Toast.showErrorNotification('Please Fill all fields');
+      setShowForm(false);
     }
   };
 
@@ -31,20 +31,17 @@ function QuickLinkForm() {
           showForm ? (
             <div className="quicklink_form">
               <IoIosArrowDropup onClick={() => setShowForm(false)} />
-              <input className="newquicklinkname" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-              <input className="newquicklinklink" placeholder="Link" onChange={(e) => setLink(e.target.value)} />
+              <form onSubmit={submitQuicklink}>
+                <input className="newquicklinkname" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                <input className="newquicklinklink" placeholder="Link" onChange={(e) => setLink(e.target.value)} />
+                <button type="submit" className="linkSubmit">Add Link</button>
+              </form>
             </div>
-          ) : (
-            <></>
-          )
-        }
-      {
-          showForm ? (
-            <button type="button" className="linkSubmit" onClick={submitQuicklink}>Add Link</button>
           ) : (
             <button type="button" className="linkSubmit" onClick={() => setShowForm(true)}>Add Link</button>
           )
         }
+
     </div>
   );
 }

@@ -6,6 +6,7 @@ const DataContext = React.createContext({
   unsplashUrl: '',
   day: '',
   changeBg: () => {},
+  weather: {},
 });
 
 export default DataContext;

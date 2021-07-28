@@ -10,6 +10,7 @@ function BackgroundCredit() {
       <p>
         {`© ${data.backgroundImageAuthor}`}
       </p>
+      <p>Via Unsplash</p>
       <a href={data.unsplashUrl} style={{ textDecoration: 'none', color: 'whitesmoke' }}>
         <RiUnsplashFill title="Unsplas link" className="bg__credit__icon" />
       </a>
