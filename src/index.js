@@ -4,17 +4,11 @@ import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import DataProvider from './components/contexts/DataProvider';
-import UserDataProvider from './components/contexts/UserDataProvider';
 
 ReactDOM.render(
-  <UserDataProvider>
-    <DataProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </DataProvider>
-  </UserDataProvider>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 
